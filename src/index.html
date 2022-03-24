@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./assets/styles/main.scss"
+        />
+        <!-- do not remove this line! -->
+        <title>Curriculum Vitae - PEC1</title>
+    </head>
+    <body>
+        <div class="bg-gradient-cold">
+            <div class="uoc-container">
+                <header class="header">
+                    <nav id="nav" class="header__nav">
+                        <a class="header__element" href="#general-info"
+                            ><i class="fa-solid fa-person-dots-from-line"></i
+                            >&nbsp;Curriculum Vitae</a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="javascript:void(0);"
+                            onclick="changeGradient('cold');"
+                            ><span
+                                class="header__element-square bg-gradient-cold"
+                                >&nbsp;&nbsp;</span
+                            ></a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="javascript:void(0);"
+                            onclick="changeGradient('chill');"
+                            ><span
+                                class="header__element-square bg-gradient-chill"
+                                >&nbsp;&nbsp;</span
+                            ></a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="#miscelaneo"
+                            >Miscelánea</a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="#experiencia"
+                            >Experiencia</a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="#formacion"
+                            >Formación</a
+                        >
+                        <a
+                            class="header__element header__element--right"
+                            href="#general-info"
+                            >Información general</a
+                        >
+                        <a
+                            class="header__icon"
+                            href="javascript:void(0);"
+                            onclick="openMenu()"
+                            ><i class="fa-solid fa-bars"></i
+                        ></a>
+                    </nav>
+                </header>
+                <h1 class="uoc-title">
+                    <i class="fa-solid fa-person-dots-from-line"></i
+                    >&nbsp;Curriculum Vitae
+                </h1>
+                <section class="seccion">
+                    <article class="seccion__contenido">
+                        <h2 class="subtitle">
+                            Programador Senior / Tecnologías de la información
+                        </h2>
+                    </article>
+                    <aside class="seccion__lateral">
+                        <h2 class="align--center">2008 - 2022</h2>
+                    </aside>
+                </section>
+                <include src="./views/general-info.html"></include>
+                <include src="./views/formacion.html"></include>
+                <include src="./views/experiencia.html"></include>
+                <include src="./views/miscelaneo.html"></include>
+            </div>
+            <include src="./views/footer.html"></include>
+        </div>
+        <script>
+            function openMenu() {
+                var x = document.getElementById("nav");
+                if (x.className === "header__nav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "header__nav";
+                }
+            }
+
+            function changeGradient(gradient) {
+                var x = document.querySelector("div");
+                x.className = "bg-gradient-" + gradient;
+            }
+        </script>
+        <script type="module" src="./assets/scripts/main.js"></script>
+        <!-- do not remove this line! -->
+    </body>
+</html>

@@ -1,0 +1,137 @@
+@use "sass:math";
+
+.subtitle {
+  text-align: left;
+}
+
+.align--center {
+  text-align: center;
+}
+
+.header {
+  @include theme;
+  position: sticky;
+  top: 0;
+}
+.header__nav {
+  overflow: hidden;
+
+  .header__element {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .header__element--right {
+    float: right;
+  }
+
+  .header__element:hover {
+    background-color: $colorBackgroundHighlight2;
+    color: black;
+  }
+
+  .header__icon {
+    display: none;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: $mqMinWidth) {
+  .header__nav a:not(:first-child) {
+    display: none;
+  }
+  .header__nav a.header__icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: $mqMinWidth) {
+  .header__nav.responsive {
+    position: relative;
+  }
+  .header__nav.responsive .header__icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header__nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.seccion {
+  display: flex;
+  @media screen and (max-width: $mqMinWidth) {
+    display: inline-block;
+  }
+}
+.seccion-hidden {
+  display: hidden;
+}
+.seccion-visible {
+  display: block;
+}
+.seccion__contenido {
+  width: math.div(1000px, $mqMaxWidth) * 100%;
+  padding: 1rem;
+  text-align: left;
+  @media screen and (max-width: $mqMinWidth) {
+    width: 100%;
+  }
+}
+.seccion__lateral {
+  width: math.div(400px, $mqMaxWidth) * 100%;
+  margin-left: auto;
+  background-color: $aside-bg;
+  padding: 1rem;
+  text-align: left;
+  @media screen and (max-width: $mqMinWidth) {
+    width: 100%;
+  }
+}
+.seccion__listado {
+  list-style-type: none;
+}
+.seccion-titulo {
+  width: 100%;
+  border-bottom: 2px solid $colorBackgroundHighlight2;
+  h3 {
+    padding-left: 2rem;
+    text-align: left;
+  }
+}
+.contacto {
+  text-align: left;
+  padding: 2rem;
+  display: inline-flex;
+  width: 100%;
+
+  .contacto__foto {
+    width: 15%;
+    border: 2px solid $colorBackgroundHighlight2;
+    margin-right: 2rem;
+    float: left;
+    background: url(#{$assetPath}/foto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    @media screen and (max-width: $mqMinWidth) {
+      width: 215px;
+    }
+  }
+
+  .contacto__ficha {
+    padding-left: 2rem;
+  }
+}
